@@ -80,6 +80,9 @@ nav {
   color: white;
   overflow-y: scroll;
 }
+.cart--items::-webkit-scrollbar {
+  display: none;
+}
 .cart--item {
   background-color: white;
   background-color: #f0eae1;
@@ -127,8 +130,8 @@ h2 {
   font-weight: 600;
 }
 .quantity--button {
-  padding: 0.2rem 0.4rem;
-  border-radius: 0.1rem;
+  padding: 0.2rem 0.7rem;
+  border-radius: 50%;
   border: none;
   background-color: rgb(216, 216, 216);
   font-weight: 700;
@@ -154,6 +157,13 @@ h2 {
   border-radius: 0.2rem;
 }
 /*Header------------------------------------------------------------*/
+.main--section {
+  overflow-y: scroll;
+  height: 91vh;
+}
+.main--section::-webkit-scrollbar {
+  display: none;
+}
 header {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -192,4 +202,49 @@ header h1 {
 }
 .buy__button:hover {
   background: rgba(255, 255, 255, 0.2);
+}
+
+/* SECTION WHY US -------------------------------------------*/
+.whyUs {
+  padding: 4rem;
+  background-color: #364f59;
+  /* background-color: #d9cab3; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+  row-gap: 4rem;
+}
+.whyUs--content {
+  padding: 4rem;
+  justify-self: center;
+  align-self: center;
+}
+.whyUs--h1 {
+  color: #d9cab3;
+  /* color: #203b46; */
+}
+.whyUs--h2 {
+  color: #dee2e6;
+  /* color: #203b46; */
+  font-size: 3rem;
+}
+.whyUs--h3 {
+  font-size: 1.2rem;
+  color: #f0eae1;
+  /* color: black; */
+}
+.whyUs--image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.icon {
+  height: 3rem;
+  width: 3rem;
+  filter: invert(100);
+}
+.img--hoodie {
+  width: 70%;
+  border-radius: 1rem;
 }

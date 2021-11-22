@@ -11,6 +11,8 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script defer src="script.js"></script>
     <title>Hoodie</title>
   </head>
@@ -40,7 +42,7 @@
       </nav>
       <div class="cart--items">
         <button class="checkout__button">Checkout</button>
-        <div class="cart--item">
+        <!-- <div class="cart--item">
           <div class="cart--item-image">
             <img class="hoodie--image" src="img/hoodies/hmgoepprod.jfif" />
           </div>
@@ -76,16 +78,49 @@
                 <span class="price">₹1499</span>
               </p>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
-      <header>
-        <div class="left">
-          <h1>Look.<br />Feel.<br />Emotion.</h1>
-          <button class="buy__button">Buy Now</button>
-        </div>
-        <div class="emptyRight"></div>
-      </header>
+    <section class="main--section">
+        <header>
+          <div class="left">
+            <h1>Look.<br />Feel.<br />Emotion.</h1>
+            <button class="buy__button">Buy Now</button>
+          </div>
+          <div class="emptyRight"></div>
+        </header>
+        <section class="whyUs">
+          <div class="whyUs--image">
+            <img class="img--hoodie" src="img/hoodie1.jpg">
+          </div>
+          <div class="whyUs--content">
+            <ion-icon class="icon" name="color-wand-outline"></ion-icon>
+            <h3 class="whyUs--h1">LOOK</h3>
+            <h1 class="whyUs--h2">Best around the globe</h1>
+            <p class="whyUs--h3">Hand picked cotton picked from the best around the world.<br>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolorem, aliquid!</p>
+          </div>
+
+          <div class="whyUs--content">
+            <ion-icon class="icon" name="sunny-outline"></ion-icon>
+            <h3 class="whyUs--h1">FEEL</h3>
+            <h1 class="whyUs--h2">Premium feel</h1>
+            <p class="whyUs--h3">Extra light weight cotton that can make you feel breeze.<br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam, totam.</p>
+          </div>
+          <div class="whyUs--image">
+            <img class="img--hoodie" src="img/hoodie2.jpg">
+          </div>
+          <div class="whyUs--image">
+            <img class="img--hoodie" src="img/hoodie3.jpg">
+          </div>
+          <div class="whyUs--content">
+            <ion-icon class="icon" name="happy-outline"></ion-icon>
+            <h3 class="whyUs--h1">EMOTION</h3>
+            <h1 class="whyUs--h2">Not just some other clothing</h1>
+            <p class="whyUs--h3">Hoodies are not just clothing but an emotion representing a person.<br>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Necessitatibus, quos!</p>
+          </div>
+        </section>
     </section>
+  </section>
+
   </body>
 </html>
