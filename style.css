@@ -163,7 +163,7 @@ header {
       rgba(255, 255, 255, 0.2),
       rgba(255, 255, 255, 0)
     ),
-    url(/img/headerImage.jpg);
+    url(img/headerImage.jpg);
   background-size: cover;
 }
 .left {
