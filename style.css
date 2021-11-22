@@ -207,7 +207,7 @@ header h1 {
 /* SECTION WHY US -------------------------------------------*/
 .whyUs {
   padding: 4rem;
-  background-color: #364f59;
+  background-color: #203b46;
   background-color: #d9cab3;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -221,18 +221,22 @@ header h1 {
   align-self: center;
 }
 .whyUs--h1 {
-  color: #d9cab3;
   color: #203b46;
+  margin-bottom: -0.5rem;
 }
 .whyUs--h2 {
-  color: #dee2e6;
+  color: #d9cab3;
   color: #203b46;
   font-size: 3rem;
+  margin-bottom: 0.5rem;
+  transform: translateX(-0.5%);
+  line-height: 1.2;
 }
 .whyUs--h3 {
   font-size: 1.2rem;
   color: #f0eae1;
   color: black;
+  letter-spacing: 0.2px;
 }
 .whyUs--image {
   display: flex;
@@ -242,7 +246,8 @@ header h1 {
 .icon {
   height: 3rem;
   width: 3rem;
-  filter: invert(100);
+  margin-bottom: 1rem;
+  /* filter: invert(100); */
 }
 .img--hoodie {
   width: 70%;
