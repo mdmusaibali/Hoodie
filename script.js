@@ -1,5 +1,5 @@
 "use strict";
-// document.querySelector(".trending").scrollIntoView();
+// document.querySelector(".section--testimonial").scrollIntoView();
 const navbar = document.querySelector("nav");
 const iconCart = document.querySelector(".icon__cart");
 const logo = document.querySelector(".logo");
@@ -30,11 +30,20 @@ document.addEventListener("keydown", function (e) {
     section1.classList.remove("transform");
   }
 });
+// NAVBAR SCROLLING-----------------------------------------------------
+document.querySelectorAll(".nav__item").forEach(function (e) {
+  e.addEventListener("click", function (el) {
+    const id = el.target.getAttribute("href");
+    document.querySelector(id).scrollIntoView({ behavior: "smooth" });
+  });
+});
 
 //Scrolling-------------------------------------
 const buyButton = document.querySelector(".buy__button");
 buyButton.addEventListener("click", function () {
-  document.querySelector(".whyUs").scrollIntoView({ behavior: "smooth" });
+  document
+    .querySelector(".section--trending")
+    .scrollIntoView({ behavior: "smooth" });
 });
 
 //Intersecting fade animation
@@ -51,4 +60,7 @@ const operations = {
 const observer = new IntersectionObserver(functions, operations);
 sections.forEach((s) => {
   observer.observe(s);
+  // s.classList.add("transformBottom");
 });
+
+//SLIDER-------------------------------
