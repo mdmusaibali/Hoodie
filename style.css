@@ -208,7 +208,7 @@ header h1 {
 .whyUs {
   padding: 4rem;
   background-color: #364f59;
-  /* background-color: #d9cab3; */
+  background-color: #d9cab3;
   display: grid;
   grid-template-columns: 1fr 1fr;
   justify-content: center;
@@ -222,17 +222,17 @@ header h1 {
 }
 .whyUs--h1 {
   color: #d9cab3;
-  /* color: #203b46; */
+  color: #203b46;
 }
 .whyUs--h2 {
   color: #dee2e6;
-  /* color: #203b46; */
+  color: #203b46;
   font-size: 3rem;
 }
 .whyUs--h3 {
   font-size: 1.2rem;
   color: #f0eae1;
-  /* color: black; */
+  color: black;
 }
 .whyUs--image {
   display: flex;
