@@ -1,4 +1,5 @@
 "use strict";
+// document.querySelector(".trending").scrollIntoView();
 const navbar = document.querySelector("nav");
 const iconCart = document.querySelector(".icon__cart");
 const logo = document.querySelector(".logo");
@@ -28,4 +29,26 @@ document.addEventListener("keydown", function (e) {
   if (e.key == "Escape") {
     section1.classList.remove("transform");
   }
+});
+
+//Scrolling-------------------------------------
+const buyButton = document.querySelector(".buy__button");
+buyButton.addEventListener("click", function () {
+  document.querySelector(".whyUs").scrollIntoView({ behavior: "smooth" });
+});
+
+//Intersecting fade animation
+const sections = document.querySelectorAll(".section");
+const functions = function (thresholds, _) {
+  const [entry] = thresholds;
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove("transformBottom");
+};
+const operations = {
+  root: null,
+  thresholds: 0.05,
+};
+const observer = new IntersectionObserver(functions, operations);
+sections.forEach((s) => {
+  observer.observe(s);
 });

@@ -16,6 +16,10 @@ body {
 .transform {
   transform: translateX(-25%);
 }
+.transformBottom {
+  opacity: 0;
+  transform: translateY(20%);
+}
 /*NAVIGATION--------------------------------------------------------*/
 nav {
   height: 9vh;
@@ -160,6 +164,7 @@ h2 {
 .main--section {
   overflow-y: scroll;
   height: 91vh;
+  background-color: #d9cab3;
 }
 .main--section::-webkit-scrollbar {
   display: none;
@@ -205,6 +210,27 @@ header h1 {
 }
 
 /* SECTION WHY US -------------------------------------------*/
+.heading--section {
+  text-align: center;
+  font-size: 1.5rem;
+  /* margin-bottom: -0.4rem; */
+  margin-bottom: 0.5rem;
+  padding-top: 2rem;
+  color: #203b46;
+}
+.heading--section--span {
+  border-bottom: 3px solid black;
+}
+.explain--section {
+  font-size: 3rem;
+  text-align: center;
+  font-weight: 600;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.section {
+  transition: all 0.5s ease;
+}
 .whyUs {
   padding: 4rem;
   background-color: #203b46;
@@ -214,6 +240,7 @@ header h1 {
   justify-content: center;
   align-items: center;
   row-gap: 4rem;
+  transition: all 0.5s ease;
 }
 .whyUs--content {
   padding: 4rem;
@@ -252,4 +279,87 @@ header h1 {
 .img--hoodie {
   width: 70%;
   border-radius: 1rem;
+}
+
+/* TRENDING------------------------------------- */
+.heading--section--span--trending {
+  color: #d9cab3;
+  border-bottom: 3px solid white;
+}
+.explain--section--trending {
+  font-size: 3rem;
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+  font-weight: 400;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+.trending--box {
+  background-color: #203b46;
+  /* background-color: white; */
+  padding-bottom: 5rem;
+}
+/* .heading--trending {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+  text-align: center;
+} */
+.trending {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 4rem;
+}
+.hoodie--img {
+  width: 100%;
+}
+.hoodie--box {
+  overflow: hidden;
+  justify-self: center;
+  width: 70%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+  /* padding: 0 1rem; */
+  box-shadow: 0 2.4rem 4.8rem rgb(0 0 0 / 8%);
+  /* border-radius: 1rem; */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(66, 66, 66);
+  letter-spacing: 2px;
+  border: 4px solid #d9cab3;
+}
+.hoodie--sizes {
+  display: flex;
+  gap: 1rem;
+}
+.hoodie--name {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+.hoodie--size,
+.hoodie--price,
+.hoodie--quality {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.hoodie--price {
+  font-size: 1.5rem;
+}
+.hoodie--priceCut {
+  font-size: 1rem;
+}
+.btn--addToCart {
+  padding: 1rem 1rem;
+  width: 100%;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  /* background-color: #203b46; */
+  background-color: #d9cab3;
+  /* color: white; */
+  cursor: pointer;
 }
