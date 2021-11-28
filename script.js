@@ -74,7 +74,7 @@ const goToSlide = function (slide) {
   });
 };
 goToSlide(0);
-btnRight.addEventListener("click", function () {
+const nextSlide = function () {
   if (curSlide == allSlides.length - 1) {
     curSlide = 0;
     goToSlide(curSlide);
@@ -84,8 +84,8 @@ btnRight.addEventListener("click", function () {
     goToSlide(curSlide);
     activateDot(curSlide);
   }
-});
-btnLeft.addEventListener("click", function () {
+};
+const prevSlide = function () {
   if (curSlide == 0) {
     curSlide = allSlides.length - 1;
     goToSlide(curSlide);
@@ -95,7 +95,13 @@ btnLeft.addEventListener("click", function () {
     goToSlide(curSlide);
     activateDot(curSlide);
   }
+};
+document.addEventListener("keydown", function (e) {
+  if (e.key == "ArrowLeft") prevSlide();
+  if (e.key == "ArrowRight") nextSlide();
 });
+btnRight.addEventListener("click", nextSlide);
+btnLeft.addEventListener("click", prevSlide);
 
 //Dot
 const dotContainer = document.querySelector(".dots");
