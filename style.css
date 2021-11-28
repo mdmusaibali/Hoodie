@@ -499,6 +499,7 @@ ion-icon {
 footer {
   height: 40vh;
   background-color: #203b46;
+  /* background-color: #37383d; */
 }
 .footer-container {
   display: flex;
@@ -508,13 +509,18 @@ footer {
 }
 .footer-bar {
   display: flex;
+  justify-content: center;
   color: #d9cab3;
+  /* color: #eee; */
   list-style: none;
   gap: 2rem;
   padding-top: 2.5rem;
   font-size: 1rem;
   margin-bottom: 2.5rem;
   font-weight: 600;
+}
+.footer-bar li {
+  cursor: pointer;
 }
 .logo-bottom {
   filter: invert(100%);
@@ -523,5 +529,6 @@ footer {
 }
 .copyright {
   color: #d9cab3;
+  /* color: #eee; */
   bottom: 1rem;
 }
