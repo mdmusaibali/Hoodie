@@ -494,3 +494,34 @@ ion-icon {
   background-color: #203b46;
   opacity: 1;
 }
+
+/* FOOTER */
+footer {
+  height: 40vh;
+  background-color: #203b46;
+}
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.footer-bar {
+  display: flex;
+  color: #d9cab3;
+  list-style: none;
+  gap: 2rem;
+  padding-top: 2.5rem;
+  font-size: 1rem;
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+.logo-bottom {
+  filter: invert(100%);
+  width: 12rem;
+  margin-bottom: 2.5rem;
+}
+.copyright {
+  color: #d9cab3;
+  bottom: 1rem;
+}
