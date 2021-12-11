@@ -130,3 +130,137 @@ const activateDot = function (slide) {
     .classList.add("dots__dot--active");
 };
 activateDot(0);
+
+//Adding hoodies to cart
+const hoodie1 = {
+  hoodieName: "Pink Hoodie",
+  hoodieSize: ["M", "L", "XL", "XXL"],
+  count: 1,
+  imageLocation: "img/hoodies/hmgoepprod (1).jfif",
+  maxQuan: 1,
+};
+const hoodie2 = {
+  hoodieName: "Velvet Hoodie",
+  hoodieSize: ["M", "L", "XL", "XXL"],
+  count: 1,
+  imageLocation: "img/hoodies/hmgoepprod (2).jpg",
+  maxQuan: 1,
+};
+const hoodie3 = {
+  hoodieName: "Printed Hoodie",
+  hoodieSize: ["M", "L", "XL", "XXL"],
+  count: 1,
+  imageLocation: "img/hoodies/hmgoepprod (3).jpg",
+  maxQuan: 1,
+};
+const hoodie4 = {
+  hoodieName: "Black hoodie",
+  hoodieSize: ["M", "L", "XL", "XXL"],
+  count: 1,
+  imageLocation: "img/hoodies/hmgoepprod (4).jpg",
+  maxQuan: 1,
+};
+const hoodie5 = {
+  hoodieName: "Creme hoodie",
+  hoodieSize: ["M", "L", "XL", "XXL"],
+  count: 1,
+  imageLocation: "img/hoodies/hmgoepprod (5).jpg",
+  maxQuan: 1,
+};
+const hoodie6 = {
+  hoodieName: "Grey hoodie",
+  hoodieSize: ["M", "L", "XL", "XXL"],
+  count: 1,
+  imageLocation: "img/hoodies/hmgoepprod (6).jpg",
+  maxQuan: 1,
+};
+const hoodies = [hoodie1, hoodie2, hoodie3, hoodie4, hoodie5, hoodie6];
+
+const cartBox = document.querySelector(".cart--items");
+const itemInCart = [];
+const trending = document.querySelector(".trending");
+trending.addEventListener("click", function (e) {
+  const clicked = e.target.closest(".btn--addToCart");
+  if (!clicked) return;
+  const hoodieNumber = clicked.dataset.test;
+  const hoodieName = hoodies[hoodieNumber].hoodieName;
+  const hoodieImage = hoodies[hoodieNumber].imageLocation;
+  const hoodieInfo = `        <div class="cart--item" >
+    <div class="cart--item-image">
+      <img class="hoodie--image" src="${hoodieImage}" />
+    </div>
+    <div class="card--item-about">
+      <h2>${hoodieName}</h2>
+      <div class="sizeandquantity">
+        <p><span class="size" data-test3="${hoodieNumber}">M</span></p>
+        <div class="quantity">
+          <button class="quantity--button quantity--button-minus" data-test1="${hoodieNumber}">-</button>
+          <p><span class="quantityOfItem" data-test2="${hoodieNumber}">1</span></p>
+          <button class="quantity--button quantity--button-plus" data-test1="${hoodieNumber}">+</button>
+        </div>
+        <p class="amount">
+          <span class="price" data-test4="${hoodieNumber}">₹1499</span>
+        </p>
+      </div>
+    </div>
+    </div>`;
+  if (!itemInCart.includes(hoodieNumber))
+    cartBox.insertAdjacentHTML("beforeend", hoodieInfo);
+  else return;
+  itemInCart.push(hoodieNumber);
+});
+
+cartBox.addEventListener("click", function (e) {
+  const clickedPlus = e.target.closest(".quantity--button-plus");
+  if (!clickedPlus) return;
+  const HoodieNumber = clickedPlus.dataset.test1;
+  const test = document.querySelectorAll(".quantityOfItem");
+  test.forEach((el) => {
+    if (HoodieNumber == el.dataset.test2) {
+      // console.log(hoodies[HoodieNumber].maxQuan);
+      el.textContent = `${++hoodies[HoodieNumber].maxQuan}`;
+    }
+  });
+  const prices = document.querySelectorAll(".price");
+  prices.forEach((el, idx) => {
+    if (HoodieNumber == el.dataset.test4) {
+      el.textContent = `₹${1499 * hoodies[HoodieNumber].maxQuan}`;
+    }
+  });
+});
+
+cartBox.addEventListener("click", function (e) {
+  const clickedMinus = e.target.closest(".quantity--button-minus");
+  if (!clickedMinus) return;
+  const HoodieNumber = clickedMinus.dataset.test1;
+  const test = document.querySelectorAll(".quantityOfItem");
+  test.forEach((el) => {
+    if (HoodieNumber == el.dataset.test2) {
+      if (!(hoodies[HoodieNumber].maxQuan <= 1)) {
+        el.textContent = `${--hoodies[HoodieNumber].maxQuan}`;
+        1499 * hoodies[HoodieNumber].maxQuan;
+      }
+    }
+  });
+  const prices = document.querySelectorAll(".price");
+  prices.forEach((el, idx) => {
+    if (HoodieNumber == el.dataset.test4) {
+      el.textContent = `₹${1499 * hoodies[HoodieNumber].maxQuan}`;
+    }
+  });
+});
+
+cartBox.addEventListener("click", function (e) {
+  const clickedSize = e.target.closest(".size");
+  if (!clickedSize) return;
+  const HoodieNumber = clickedSize.dataset.test3;
+  const sizes = document.querySelectorAll(".size");
+  sizes.forEach((el) => {
+    if (HoodieNumber == el.dataset.test3) {
+      if (hoodies[HoodieNumber].count > 3) hoodies[HoodieNumber].count = 0;
+      el.textContent = `${
+        hoodies[HoodieNumber].hoodieSize[hoodies[HoodieNumber].count++]
+      }`;
+    }
+  });
+});
