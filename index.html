@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1" />
     <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="mediaqueries.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -24,8 +25,8 @@
   </head>
   <body>
     <section class="section--1">
-      <nav>
-        <div class="nav__bar">
+      <nav class="navigation">
+        <div class="nav__bar hide">
           <ul class="nav__items">
             <li class="nav__item" href="#section--home">Home</li>
             <li class="nav__item" href="#section--whyUs">Why us</li>
@@ -33,6 +34,11 @@
             <li class="nav__item" href="#section--testimonial">Testimonial</li>
           </ul>
         </div>
+        <svg class="menu-icon hide" viewBox="0 0 100 80" width="20" height="20">
+          <rect width="100" height="10"></rect>
+          <rect y="30" width="100" height="10"></rect>
+          <rect y="60" width="100" height="10"></rect>
+        </svg>
         <div><img class="logo" src="img/logobg.png" /></div>
         <div class="cart">
           <svg
@@ -60,14 +66,14 @@
           </div>
           <div class="emptyRight"></div>
         </header>
-        <section id="section--whyUs">
-          <div class="section transformBottom">
+        <section class="intTest" id="section--whyUs">
+          <div class="section intTest1">
             <h1 class="heading--section">
               <span class="heading--section--span">WHY US?</span>
             </h1>
             <p class="explain--section">Reasons why you can trust us</p>
             <div class="whyUs-box whyUs">
-              <div class="whyUs--image">
+              <div class="whyUs--image whyUs--image1">
                 <img class="img--hoodie" src="img/hoodie1.jpg" />
               </div>
               <div class="whyUs--content">
@@ -93,10 +99,10 @@
                   totam.
                 </p>
               </div>
-              <div class="whyUs--image">
+              <div class="whyUs--image whyUs--image2">
                 <img class="img--hoodie" src="img/hoodie2.jpg" />
               </div>
-              <div class="whyUs--image">
+              <div class="whyUs--image whyUs--image3">
                 <img class="img--hoodie" src="img/hoodie3.jpg" />
               </div>
               <div class="whyUs--content">
@@ -113,8 +119,8 @@
             </div>
           </div>
         </section>
-        <section class="section--trending" id="section--trending">
-          <div class="section trending--box transformBottom">
+        <section class="intTest section--trending" id="section--trending">
+          <div class="section intTest1 trending--box">
             <h1 class="heading--section">
               <span class="heading--section--span--trending">TRENDING</span>
             </h1>
@@ -228,96 +234,95 @@
             </div>
           </div>
         </section>
-        <section
-          class="section section--testimonial transformBottom"
-          id="section--testimonial"
-        >
-          <h1 class="heading--section">
-            <span class="heading--section--span">TESTIMONIAL</span>
-          </h1>
-          <p class="explain--section">What did they say?</p>
-          <section class="testimonial--container">
-            <div class="testimonial--box">
-              <button class="btn btn--left">
-                <ion-icon name="chevron-back-outline"></ion-icon>
-              </button>
-              <div class="slides">
-                <div class="slide slide--1">
-                  <h1 class="testimonial--heading">Amazing Quality</h1>
-                  <p class="testimonial--para">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Nesciunt blanditiis cupiditate totam molestiae numquam
-                    suscipit illo modi libero iste! Corrupti quasi modi,
-                    voluptatibus velit fugit voluptates soluta eos dolorem
-                    magnam suscipit cupiditate! Id unde minus recusandae
-                    dignissimos consequuntur iusto cum.
-                  </p>
-                  <div class="testimonial--person">
-                    <div>
-                      <img
-                        class="testimonial--image"
-                        src="img/testimonialImages/user-1.jpg"
-                      />
+        <section class="intTest section--testimonial" id="section--testimonial">
+          <div class="intTest1 section">
+            <h1 class="heading--section">
+              <span class="heading--section--span">TESTIMONIAL</span>
+            </h1>
+            <p class="explain--section">What did they say?</p>
+            <section class="testimonial--container">
+              <div class="testimonial--box">
+                <button class="btn btn--left">
+                  <ion-icon name="chevron-back-outline"></ion-icon>
+                </button>
+                <div class="slides">
+                  <div class="slide slide--1">
+                    <h1 class="testimonial--heading">Amazing Quality</h1>
+                    <p class="testimonial--para">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Nesciunt blanditiis cupiditate totam molestiae numquam
+                      suscipit illo modi libero iste! Corrupti quasi modi,
+                      voluptatibus velit fugit voluptates soluta eos dolorem
+                      magnam suscipit cupiditate! Id unde minus recusandae
+                      dignissimos consequuntur iusto cum.
+                    </p>
+                    <div class="testimonial--person">
+                      <div>
+                        <img
+                          class="testimonial--image"
+                          src="img/testimonialImages/user-1.jpg"
+                        />
+                      </div>
+                      <div style="display: flex; flex-direction: column">
+                        <p>Aarav Lynn</p>
+                        <p style="font-weight: 400">San Francisco, USA</p>
+                      </div>
                     </div>
-                    <div style="display: flex; flex-direction: column">
-                      <p>Aarav Lynn</p>
-                      <p style="font-weight: 400">San Francisco, USA</p>
+                  </div>
+                  <div class="slide slide--2">
+                    <h1 class="testimonial--heading">Premium Finishing</h1>
+                    <p class="testimonial--para">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Nesciunt blanditiis cupiditate totam molestiae numquam
+                      suscipit illo modi libero iste! Corrupti quasi modi,
+                      voluptatibus velit fugit voluptates soluta eos dolorem
+                      magnam suscipit cupiditate! Id unde minus recusandae
+                      dignissimos consequuntur iusto cum.
+                    </p>
+                    <div class="testimonial--person">
+                      <div>
+                        <img
+                          class="testimonial--image"
+                          src="img/testimonialImages/user-2.jpg"
+                        />
+                      </div>
+                      <div style="display: flex; flex-direction: column">
+                        <p>Miyah Miles</p>
+                        <p style="font-weight: 400">London, UK</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="slide slide--3">
+                    <h1 class="testimonial--heading">Long Lasting</h1>
+                    <p class="testimonial--para">
+                      Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                      Nesciunt blanditiis cupiditate totam molestiae numquam
+                      suscipit illo modi libero iste! Corrupti quasi modi,
+                      voluptatibus velit fugit voluptates soluta eos dolorem
+                      magnam suscipit cupiditate! Id unde minus recusandae
+                      dignissimos consequuntur iusto cum.
+                    </p>
+                    <div class="testimonial--person">
+                      <div>
+                        <img
+                          class="testimonial--image"
+                          src="img/testimonialImages/user-3.jpg"
+                        />
+                      </div>
+                      <div style="display: flex; flex-direction: column">
+                        <p>Francisco Gomes</p>
+                        <p style="font-weight: 400">Lisbon, Portugal</p>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="slide slide--2">
-                  <h1 class="testimonial--heading">Premium Finishing</h1>
-                  <p class="testimonial--para">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Nesciunt blanditiis cupiditate totam molestiae numquam
-                    suscipit illo modi libero iste! Corrupti quasi modi,
-                    voluptatibus velit fugit voluptates soluta eos dolorem
-                    magnam suscipit cupiditate! Id unde minus recusandae
-                    dignissimos consequuntur iusto cum.
-                  </p>
-                  <div class="testimonial--person">
-                    <div>
-                      <img
-                        class="testimonial--image"
-                        src="img/testimonialImages/user-2.jpg"
-                      />
-                    </div>
-                    <div style="display: flex; flex-direction: column">
-                      <p>Miyah Miles</p>
-                      <p style="font-weight: 400">London, UK</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="slide slide--3">
-                  <h1 class="testimonial--heading">Long Lasting</h1>
-                  <p class="testimonial--para">
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                    Nesciunt blanditiis cupiditate totam molestiae numquam
-                    suscipit illo modi libero iste! Corrupti quasi modi,
-                    voluptatibus velit fugit voluptates soluta eos dolorem
-                    magnam suscipit cupiditate! Id unde minus recusandae
-                    dignissimos consequuntur iusto cum.
-                  </p>
-                  <div class="testimonial--person">
-                    <div>
-                      <img
-                        class="testimonial--image"
-                        src="img/testimonialImages/user-3.jpg"
-                      />
-                    </div>
-                    <div style="display: flex; flex-direction: column">
-                      <p>Francisco Gomes</p>
-                      <p style="font-weight: 400">Lisbon, Portugal</p>
-                    </div>
-                  </div>
-                </div>
+                <div class="dots"></div>
+                <button class="btn btn--right">
+                  <ion-icon name="chevron-forward-outline"></ion-icon>
+                </button>
               </div>
-              <div class="dots"></div>
-              <button class="btn btn--right">
-                <ion-icon name="chevron-forward-outline"></ion-icon>
-              </button>
-            </div>
-          </section>
+            </section>
+          </div>
         </section>
         <footer>
           <div class="footer-container">
@@ -332,7 +337,7 @@
             </ul>
             <img class="logo-bottom" src="img/logobg.png" />
             <div class="copyright">
-              <p style="font-weight: 600">
+              <p class="copyright-p" style="font-weight: 600">
                 © <strong>Copyright</strong> by Mohammed Musaib Ali, you are
                 free to use this commercially but credit to author is mandatory
               </p>

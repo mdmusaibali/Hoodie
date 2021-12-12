@@ -47,22 +47,58 @@ buyButton.addEventListener("click", function () {
 });
 
 //Intersecting fade animation
-const sections = document.querySelectorAll(".section");
-const functions = function (thresholds, _) {
-  const [entry] = thresholds;
-  if (!entry.isIntersecting) return;
-  entry.target.classList.remove("transformBottom");
-};
-const operations = {
-  root: null,
-  thresholds: 0.05,
-};
-const observer = new IntersectionObserver(functions, operations);
-sections.forEach((s) => {
-  observer.observe(s);
-  // s.classList.add("transformBottom");
-});
 
+// if (window.innerWidth < 426) {
+//   console.log("Mob Fading");
+//   const sections = document.querySelectorAll(".section");
+//   const functions = function (thresholds, _) {
+//     const [entry] = thresholds;
+//     if (!entry.isIntersecting) return;
+//     entry.target.classList.remove("transformBottom");
+//   };
+//   const operations = {
+//     root: null,
+//     thresholds: 0.01,
+//   };
+//   const observer = new IntersectionObserver(functions, operations);
+//   sections.forEach((s) => {
+//     observer.observe(s);
+//     // s.classList.add("transformBottom");
+//   });
+// } else {
+//   console.log("Desktop");
+//   const sections = document.querySelectorAll(".section");
+//   const functions = function (thresholds, _) {
+//     const [entry] = thresholds;
+//     if (entry.inIntersecting) console.log("int");
+//     if (!entry.isIntersecting) return;
+//     entry.target.classList.remove("transformBottom");
+//   };
+//   const operations = {
+//     root: null,
+//     thresholds: 0.05,
+//   };
+//   const observer = new IntersectionObserver(functions, operations);
+//   sections.forEach((s) => {
+//     observer.observe(s);
+//     // s.classList.add("transformBottom");
+//   });
+// }
+
+const allitis = document.querySelectorAll(".intTest");
+const testreveal = function (entries, _) {
+  const [entry] = entries;
+  if (!entry.isIntersecting) return;
+  // console.log(entry.target.children);
+  entry.target.children[0].classList.remove("intTest1");
+};
+const testobserver = new IntersectionObserver(testreveal, {
+  root: null,
+  threshold: 0.05,
+});
+allitis.forEach((s) => {
+  testobserver.observe(s);
+});
 //SLIDER-------------------------------
 let curSlide = 0;
 const btnLeft = document.querySelector(".btn--left");
@@ -294,3 +330,29 @@ cartBox.addEventListener("click", function (e) {
     }
   });
 });
+
+if (window.innerWidth < 426) {
+  const header = document.getElementById("section--home");
+  header.style.backgroundImage =
+    "linear-gradient(to right bottom,rgba(255, 255, 255, 0.2),rgba(255, 255, 255, 0)),url(img/headerImagemob.jpg)";
+}
+
+//Mobile Navbar
+if (window.innerWidth < 426) {
+  // document.querySelector(".nav__bar").style.display = "none";
+  const menuIcon = document.querySelector(".menu-icon");
+  menuIcon.classList.remove("hide");
+  menuIcon.addEventListener("click", function () {
+    document.querySelector(".nav__bar").classList.toggle("hide");
+    menuIcon.classList.toggle("fillToggle");
+  });
+  const navItems = document.querySelector(".nav__items");
+  navItems.addEventListener("click", function (e) {
+    const clicked = e.target.closest(".nav__item");
+    if (!clicked) return;
+    document.querySelector(".nav__bar").classList.toggle("hide");
+    menuIcon.classList.toggle("fillToggle");
+  });
+} else {
+  document.querySelector(".nav__bar").classList.remove("hide");
+}

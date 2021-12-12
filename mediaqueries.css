@@ -1,0 +1,141 @@
+@media (max-width: 1500px) {
+  footer {
+    height: 18rem;
+  }
+}
+@media (max-width: 1150px) {
+  html {
+    font-size: 80%;
+  }
+}
+@media (max-width: 769px) {
+  html {
+    font-size: 70%;
+  }
+  .trending {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .whyUs--h2 {
+    font-size: 2.3rem;
+  }
+  .whyUs--h3 {
+    font-size: 1.2rem;
+  }
+  .whyUs--content {
+    padding: 2rem;
+  }
+  .img--hoodie {
+    width: 75%;
+  }
+  .testimonial--box {
+    width: 70%;
+  }
+  .slides {
+    height: 300px;
+  }
+}
+@media (max-width: 600px) {
+  html {
+    font-size: 60%;
+  }
+}
+@media (max-width: 426px) {
+  .transform {
+    transform: translateX(-55%);
+  }
+  .cart--items {
+    width: 55%;
+  }
+  .trending {
+    grid-template-columns: 1fr;
+  }
+  .whyUs {
+    grid-template-columns: 1fr;
+    gap: 0rem;
+    padding: 2rem;
+  }
+  .whyUs--image1 {
+    grid-row: 1;
+  }
+  .whyUs--image2 {
+    grid-row: 3;
+  }
+  .whyUs--image3 {
+    grid-row: 5;
+  }
+  .whyUs--content {
+    padding: 2rem 5rem;
+    margin-bottom: 4rem;
+  }
+  .whyUs--content {
+    width: 100%;
+  }
+  .explain--section {
+    margin-bottom: 2rem;
+  }
+  .whyUs--h1 {
+    font-size: 1.5rem;
+  }
+  .whyUs--h2 {
+    font-size: 2.5rem;
+  }
+  .whyUs--h3 {
+    font-size: 1.5rem;
+  }
+  .hoodie--quality {
+    font-size: 1.4rem;
+  }
+  .hoodie--price {
+    font-size: 1.8rem;
+  }
+  .hoodie--details {
+    gap: 1.8rem;
+  }
+  .hoodie--name {
+    font-size: 2rem;
+  }
+  .section--testimonial {
+    height: 80vh;
+  }
+  .footer-bar {
+    gap: 1.2rem;
+  }
+  /* .nav__bar {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vh;
+    background-color: red;
+  }
+  .nav__items {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  } */
+  .nav__bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.698);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99;
+  }
+  .nav__items {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav__item {
+    color: black;
+    font-size: 1.4rem;
+  }
+}
