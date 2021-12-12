@@ -119,12 +119,13 @@
     align-items: center;
   } */
   .nav__bar {
+    transition: all 1s ease;
     position: absolute;
     top: 0;
     left: 0;
     height: 100vh;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.698);
+    background-color: rgba(255, 255, 255, 0.835);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,5 +138,9 @@
   .nav__item {
     color: black;
     font-size: 1.4rem;
+  }
+  .icon__cart {
+    height: 2.5rem;
+    width: 2.5rem;
   }
 }
