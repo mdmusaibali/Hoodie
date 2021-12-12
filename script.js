@@ -176,7 +176,20 @@ const hoodie6 = {
 };
 const hoodies = [hoodie1, hoodie2, hoodie3, hoodie4, hoodie5, hoodie6];
 
+const countItemsInCart = function () {
+  var [...test] = cartBox.children;
+  var counter = 0;
+  test.forEach((el) => {
+    if (el.classList.contains("cart--item")) {
+      counter++;
+    }
+  });
+  return counter;
+};
+
 const cartBox = document.querySelector(".cart--items");
+const numberOfItemsInCart = document.querySelector(".itemsincart");
+numberOfItemsInCart.textContent = `${countItemsInCart()}`;
 const itemInCart = [];
 const trending = document.querySelector(".trending");
 trending.addEventListener("click", function (e) {
@@ -185,7 +198,7 @@ trending.addEventListener("click", function (e) {
   const hoodieNumber = clicked.dataset.test;
   const hoodieName = hoodies[hoodieNumber].hoodieName;
   const hoodieImage = hoodies[hoodieNumber].imageLocation;
-  const hoodieInfo = `        <div class="cart--item" >
+  const hoodieInfo = `        <div class="cart--item" data-hoodienum="${hoodieNumber}" >
     <div class="cart--item-image">
       <img class="hoodie--image" src="${hoodieImage}" />
     </div>
@@ -204,10 +217,11 @@ trending.addEventListener("click", function (e) {
       </div>
     </div>
     </div>`;
-  if (!itemInCart.includes(hoodieNumber))
+  if (!itemInCart.includes(hoodieNumber)) {
     cartBox.insertAdjacentHTML("beforeend", hoodieInfo);
-  else return;
-  itemInCart.push(hoodieNumber);
+    itemInCart.push(hoodieNumber);
+    numberOfItemsInCart.textContent = `${countItemsInCart()}`;
+  } else return;
 });
 
 cartBox.addEventListener("click", function (e) {
@@ -236,6 +250,22 @@ cartBox.addEventListener("click", function (e) {
   const test = document.querySelectorAll(".quantityOfItem");
   test.forEach((el) => {
     if (HoodieNumber == el.dataset.test2) {
+      if (hoodies[HoodieNumber].maxQuan == 1) {
+        var [...test] = cartBox.children;
+        test.forEach((el) => {
+          if (el.classList.contains("cart--item")) {
+            if (el.dataset.hoodienum == HoodieNumber) {
+              if (itemInCart.includes(el.dataset.hoodienum)) {
+                var num = itemInCart.indexOf(`${el.dataset.hoodienum}`);
+                itemInCart.splice(num, 1);
+                el.remove();
+                numberOfItemsInCart.textContent = `${countItemsInCart()}`;
+                // console.log(countItemsInCart());
+              }
+            }
+          }
+        });
+      }
       if (!(hoodies[HoodieNumber].maxQuan <= 1)) {
         el.textContent = `${--hoodies[HoodieNumber].maxQuan}`;
         1499 * hoodies[HoodieNumber].maxQuan;

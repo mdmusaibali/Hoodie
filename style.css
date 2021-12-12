@@ -20,6 +20,15 @@ body {
   opacity: 0;
   transform: translateY(20%);
 }
+/* PREVENT COPYING */
+.size {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
 /*NAVIGATION--------------------------------------------------------*/
 nav {
   height: 9vh;
@@ -69,6 +78,18 @@ nav {
   cursor: pointer;
 }
 /* CARTITEMS------------------------------------------------------- */
+.cart {
+  position: relative;
+}
+.itemsincart {
+  position: absolute;
+  font-size: 0.8rem;
+  bottom: 8%;
+  right: -40%;
+  background-color: red;
+  padding: 1px 6px;
+  border-radius: 50%;
+}
 .cart--items {
   position: absolute;
   top: 0;
