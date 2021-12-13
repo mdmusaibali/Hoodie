@@ -89,7 +89,6 @@ const allitis = document.querySelectorAll(".intTest");
 const testreveal = function (entries, _) {
   const [entry] = entries;
   if (!entry.isIntersecting) return;
-  // console.log(entry.target.children);
   entry.target.children[0].classList.remove("intTest1");
 };
 const testobserver = new IntersectionObserver(testreveal, {
@@ -338,7 +337,7 @@ if (window.innerWidth < 426) {
 }
 
 //Mobile Navbar
-if (window.innerWidth < 426) {
+if (window.innerWidth < 600) {
   // document.querySelector(".nav__bar").style.display = "none";
   const menuIcon = document.querySelector(".menu-icon");
   menuIcon.classList.remove("hide");
